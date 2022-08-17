@@ -12,5 +12,14 @@
     
 }
 .btn{
-    color: #505050;
+    color: #d4d4d2;
+    background-color: #505050;
+    border-radius: 51px;
+    width: 51px;
+    padding: 12px;
+    margin: 1px 4px;
+}
+.fr{
+    background-color: #d4d4d2;
+    color: black;
 }
