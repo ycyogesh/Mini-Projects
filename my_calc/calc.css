@@ -1,0 +1,16 @@
+.calc{
+    margin-top: 30px;
+    padding: 150px 563px;
+    /* border: 2px solid black; */
+}
+.out{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.a{
+    
+}
+.btn{
+    color: #505050;
+}
