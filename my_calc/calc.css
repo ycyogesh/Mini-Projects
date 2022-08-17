@@ -17,9 +17,21 @@
     border-radius: 51px;
     width: 51px;
     padding: 12px;
-    margin: 1px 4px;
+    margin: 3px 10px;
 }
 .fr{
     background-color: #d4d4d2;
     color: black;
+}
+.fr:hover{
+    color: #ff9500;
+}
+.fl{
+    color: white;
+    background-color: #ff9500;
+    font-weight: 400;
+}
+.c{
+    width: 99px;
+    border-radius: 25px;
 }
