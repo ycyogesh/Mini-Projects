@@ -3,10 +3,20 @@
     padding: 150px 563px;
     /* border: 2px solid black; */
 }
+.total{
+    display: flex;
+    margin: -23px;
+    background: black;
+}
 .out{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
+    margin-left: 22px;
+    margin-top: 120px;
+    color: #d4d4d2;
+    font-size: 30px;
+    font-weight: 500;
 }
 .a{
     
@@ -19,17 +29,26 @@
     padding: 12px;
     margin: 3px 10px;
 }
+.btn:hover{
+    color: white;
+    font-weight: 700;
+}
 .fr{
     background-color: #d4d4d2;
     color: black;
 }
 .fr:hover{
     color: #ff9500;
+    font-weight: 700;
 }
 .fl{
     color: white;
     background-color: #ff9500;
     font-weight: 400;
+}
+.fl:hover{
+    color: white;
+    font-weight: 700;
 }
 .c{
     width: 99px;
