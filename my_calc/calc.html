@@ -10,77 +10,84 @@
 
     <link rel="stylesheet" href="./calc.css">
     <title>Calculator</title>
+    <script>
+        function myFunction() {
+          document.getElementsByClassName(this.getElementsByClassName);
+        }
+        </script>
 </head>
 
 <body>
     <div class="container calc">
-        <div class="row">
-            <div class="out">
-                Output
-            </div>
-        </div>
-        <div class="row a">
-            <div class="col-3">
-                <button class="btn fr" type="button">AC</button>
-            </div>
-            <div class="col-3">
-                <button class="btn fr" type="button">+/-</button>
-            </div>
-            <div class="col-3">
-                <button class="btn fr" type="button">%</button>
-            </div>
-            <div class="col-3">
-                <button class="btn fl" type="button">÷</button>
-            </div>
-        </div>
-        <div class="row a">
-            <div class="col-3">
-                <button class="btn" type="button">7</button>
-            </div>
-            <div class="col-3">
-                <button class="btn" type="button">8</button>
-            </div>
-            <div class="col-3">
-                <button class="btn" type="button">9</button>
-            </div>
-            <div class="col-3">
-                <button class="btn fl" type="button">*</button>
-            </div>
-        </div>
-        <div class="row a">
-            <div class="col-3">
-                <button class="btn" type="button">4</button>
-            </div>
-            <div class="col-3">
-                <button class="btn" type="button">5</button>
-            </div>
-            <div class="col-3">
-                <button class="btn" type="button">6</button>
-            </div>
-            <div class="col-3">
-                <button class="btn fl" type="button">-</button>
-            </div>
-        </div>
-        <div class="row a">
-            <div class="col-3">
-                <button class="btn" type="button">1</button>
+        <div class="row total">
+            <div class="row">
+                <div class="out">
+                    0
                 </div>
-            <div class="col-3">
-                <button class="btn" type="button">2</button>
-                </div>
-            <div class="col-3">
-                <button class="btn" type="button">3</button>
-                </div>
-            <div class="col-3">
-                <button class="btn fl" type="button">+</button>
-                </div>
-        </div>
-        <div class="row a">
-            <div class="col-6"><button class="btn c" type="button">0</button>
             </div>
-            <div class="col-3"><button class="btn" type="button">.</button>
+            <div class="row a">
+                <div class="col-3">
+                    <button onclick="myFunction()" id="AC" class="btn fr" type="button">AC</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="+/-"class="btn fr" type="button">+/-</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="%" class="btn fr" type="button">%</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="÷" class="btn fl" type="button">÷</button>
+                </div>
             </div>
-            <div class="col-3"><button class="btn fl" type="button">=</button>
+            <div class="row a">
+                <div class="col-3">
+                    <button onclick="myFunction()" id="7" class="btn" type="button">7</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="8" class="btn" type="button">8</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="9" class="btn" type="button">9</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="*" class="btn fl" type="button">*</button>
+                </div>
+            </div>
+            <div class="row a">
+                <div class="col-3">
+                    <button onclick="myFunction()" id="4" class="btn" type="button">4</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="5" class="btn" type="button">5</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="6" class="btn" type="button">6</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="-" class="btn fl" type="button">-</button>
+                </div>
+            </div>
+            <div class="row a">
+                <div class="col-3">
+                    <button onclick="myFunction()" id="1" class="btn" type="button">1</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="2" class="btn" type="button">2</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="3" class="btn" type="button">3</button>
+                </div>
+                <div class="col-3">
+                    <button onclick="myFunction()" id="+" class="btn fl" type="button">+</button>
+                </div>
+            </div>
+            <div class="row a">
+                <div class="col-6"><button onclick="myFunction()" id=""class="btn c" type="button">0</button>
+                </div>
+                <div class="col-3"><button onclick="myFunction()" id=""class="btn " type="button">.</button>
+                </div>
+                <div class="col-3"><button onclick="myFunction()" id=""class="btn fl" type="button">=</button>
+                </div>
             </div>
         </div>
     </div>
