@@ -43,7 +43,7 @@ for(let i = 0;i<val.length;i++){
     // console.log("Check Operator");
    }
 }
-console.log(val);
+// console.log(val);
 let c = +(val.length-2) //-1 for without quotes
 // console.log(c);
 let value = +val[c]
