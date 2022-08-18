@@ -6,7 +6,7 @@ let val = str.split(/[+*-/]/)
 console.log(op);
 console.log(val);
 
-for(let i = 0;i<str.length;i++){
+for(let i = 0;i<op.length;i++){
    if(op[i]=="+"){
     val[i+1] = +val[i] + +val[i+1]
    }
@@ -25,6 +25,8 @@ for(let i = 0;i<str.length;i++){
    }
 }
 let a = val.length-1
+console.log(a);
+console.log(val);
 console.log(val[a]);
 
 
