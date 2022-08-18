@@ -5,10 +5,11 @@ var app = express();
 
 app.get("/",(req,res)=>{
     var calci = req.query.calc;
-    console.log(req.query.calc);
+    // console.log(req.query.calc);
     var answer = myFunction(calci);
     console.log(answer);
     res.send(""+answer)
+    // res.send()
 
 })
 
@@ -21,9 +22,9 @@ app.listen(3000,()=>{
 
 function myFunction(a){
 let op = a.split(/[0-9]/).filter(e => e!='')
-let val = a.split(/[+*-/"]/)
+let val = a.split(/[+*-/'"%]/)
 
-for(let i = 0;i<a.length;i++){
+for(let i = 0;i<val.length;i++){
    if(op[i]=="+"){
     val[i+1] = +val[i] + +val[i+1]
    }
@@ -39,6 +40,7 @@ for(let i = 0;i<a.length;i++){
    else if(op[i]=="%"){
     val[i+1]= +val[i] % +val[i+1]
    }else{
+    // console.log("Check Operator");
    }
 }
 // console.log(val);
