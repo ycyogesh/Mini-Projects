@@ -19,7 +19,6 @@ app.listen(3000,()=>{
 
 
 
-
 function myFunction(a){
 let op = a.split(/[0-9]/).filter(e => e!='')
 let val = a.split(/[+*-/'"%]/)
@@ -44,7 +43,7 @@ for(let i = 0;i<val.length;i++){
    }
 }
 // console.log(val);
-let c = +(val.length-2) //-1 for without quotes
+let c = +(val.length-1) //-1 for without quotes
 // console.log(c);
 let value = +val[c]
 // console.log(value);
