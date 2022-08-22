@@ -1,12 +1,36 @@
 const express = require("express");
 const fetch = require('node-fetch');
 
-var app = express();
+const cors = require('cors')
 
+// var corsOptions = {
+//   origin: '*',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+// }
+var app = express();
+app.use(cors);
+
+// app.use(cors({
+//     origin: '*'
+// }));
+
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5501');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    next();
+})
+
+// app.use(function(req, res, next) {
+//     console.log("dsdfdsfdsfds",req.query.calc)
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 
 app.get("/",(req,res)=>{
-    var calci = req.query.calc;
+    console.log("insidse get");
+    var calci = req.query.calci;
     // console.log(req.query.calc);
     var answer = myFunction(calci);
     console.log(answer);
