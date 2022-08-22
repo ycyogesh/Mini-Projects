@@ -19,9 +19,9 @@
             document.getElementById("answer").innerText = "";
           }
           else if(event.target.innerText=="="){
-            fetch("http://localhost:3000/?calci=" + document.getElementById("answer").innerText ).then(data=>
+            fetch("http://localhost:3001/?calci=" + document.getElementById("answer").innerText ).then(data=>
             {
-                console.log(data)
+                // console.log("Equal part", data)
                 document.getElementById("answer").innerText;
             })
           }
