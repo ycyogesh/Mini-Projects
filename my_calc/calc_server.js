@@ -35,12 +35,12 @@ app.get("/",(req,res)=>{
     var answer = myFunction(calci);
     console.log(answer);
     // res.send(""+answer)
-    res.json({"ans": answer})
+    res.send(""+answer)
     // res.send()
 
 })
 
-app.listen(3001,()=>{
+app.listen(3003,()=>{
     console.log("App Running");
 })
 

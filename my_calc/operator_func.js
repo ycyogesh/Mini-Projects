@@ -1,4 +1,4 @@
-let a = "3+5-5"
+let a = "2+3*5-2*2-5*5/5"
 let count = 0
 
 
@@ -13,7 +13,7 @@ for (i = 0; i < a.length; i++) {
         count++
         if (count % 2 == 0) {
             console.log("operator part---------->");
-            
+            count = 1
             v1 = opEval(opt, v1, v)
             v =""
         }

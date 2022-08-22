@@ -1,114 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="./calc.css">
+    <link rel="stylesheet" href="./calc.css" />
     <title>Calculator</title>
     <script>
-        var a ="";
-        function myFunction(event) {
-          console.log(event.target.innerText)
-          if(event.target.innerText=='AC'){
-            a=""
-            document.getElementById("answer").innerText = "";
-          }
-          else if(event.target.innerText=="="){
-            fetch("http://localhost:3001/?calci=" + document.getElementById("answer").innerText ).then(data=>
-            {
-                // console.log("Equal part", data)
-                document.getElementById("answer").innerText;
-            })
-          }
-          else{
-            a += event.target.innerText;
-            document.getElementById("answer").innerText = a;
-            
-          }
+      var a = "";
+      
+      function myFunction(event) {
+        console.log(event.target.innerText);
+        if (event.target.innerText == "AC") {
+          a = "";
+          document.getElementById("answer").innerText = "";
+        } else if (event.target.innerText == "=") {
+            let calc = encodeURIComponent(document.getElementById("answer").innerText)
+            fetch(
+            "http://localhost:3003/?calci=" + calc).then((res) => {
+            res.text().then((data) => {
+              document.getElementById("answer").innerText = data;
+            });
+          });
+        } else {
+          a += event.target.innerText;
+          document.getElementById("answer").innerText = a;
         }
-        </script>
-</head>
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
     <div class="container calc">
-        <div class="row total" onclick="myFunction(event)">
-            <div class="row">
-                <div class="out" id="answer"></div>
-            </div>
-            <div class="row a">
-                <div class="col-3">
-                    <button  class="btn fr" type="button">AC</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fr" type="button" >+/-</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fr" type="" >%</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fl" type="button">÷</button>
-                </div>
-            </div>
-            <div class="row a">
-                <div class="col-3">
-                    <button  class="btn" type="button">7</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button">8</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button">9</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fl" type="button">*</button>
-                </div>
-            </div>
-            <div class="row a">
-                <div class="col-3">
-                    <button  class="btn" type="button" >4</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button" >5</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button" >6</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fl" type="button" >-</button>
-                </div>
-            </div>
-            <div class="row a">
-                <div class="col-3">
-                    <button  class="btn" type="button">1</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button">2</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn" type="button">3</button>
-                </div>
-                <div class="col-3">
-                    <button  class="btn fl" type="button">+</button>
-                </div>
-            </div>
-            <div class="row a">
-                <div class="col-6"><button  id=""class="btn c" type="button" >0</button>
-                </div>
-                <div class="col-3"><button  id=""class="btn " type="button" >.</button>
-                </div>
-                <div class="col-3"><button  id=""class="btn fl" type="button" >=</button>
-                </div>
-            </div>
+      <div class="row total" onclick="myFunction(event)">
+        <div class="row">
+          <div class="out" id="answer"></div>
         </div>
+        <div class="row a">
+          <div class="col-3">
+            <button class="btn fr" type="button">AC</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fr" type="button">+/-</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fr" type="">%</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fl" type="button">÷</button>
+          </div>
+        </div>
+        <div class="row a">
+          <div class="col-3">
+            <button class="btn" type="button">7</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">8</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">9</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fl" type="button">*</button>
+          </div>
+        </div>
+        <div class="row a">
+          <div class="col-3">
+            <button class="btn" type="button">4</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">5</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">6</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fl" type="button">-</button>
+          </div>
+        </div>
+        <div class="row a">
+          <div class="col-3">
+            <button class="btn" type="button">1</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">2</button>
+          </div>
+          <div class="col-3">
+            <button class="btn" type="button">3</button>
+          </div>
+          <div class="col-3">
+            <button class="btn fl" type="button">+</button>
+          </div>
+        </div>
+        <div class="row a">
+          <div class="col-6">
+            <button id="" class="btn c" type="button">0</button>
+          </div>
+          <div class="col-3">
+            <button id="" class="btn" type="button">.</button>
+          </div>
+          <div class="col-3">
+            <button id="" class="btn fl" type="button">=</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-        <!-- <script>
+    <!-- <script>
             var attribute = ""
             var elements = document.getElementsByClassName("btn")
 
@@ -125,7 +130,5 @@
         //     element.addEventListener('click', myFunction,false);
         // });
         </script> -->
-
-</body>
-
+  </body>
 </html>
